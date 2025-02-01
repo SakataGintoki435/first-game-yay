@@ -20,11 +20,11 @@ public class PlayerMoveement : MonoBehaviour
 
         if(horizontalInput > 0.01f)
         {
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(2,2,2);
         }
         else if(horizontalInput < -0.01f)
         {
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-2,2,2);
         }
 
         if(Input.GetKey(KeyCode.Space))
