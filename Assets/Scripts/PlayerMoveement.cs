@@ -20,14 +20,14 @@ public class PlayerMoveement : MonoBehaviour
 
         if(horizontalInput > 0.01f)
         {
-            transform.localScale = new Vector3(2,2,2);
+            transform.localScale = new Vector3(1,1,1);
         }
         else if(horizontalInput < -0.01f)
         {
-            transform.localScale = new Vector3(-2,2,2);
+            transform.localScale = new Vector3(-1,1,1);
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && grounded)
         {
             Jump();
         }
@@ -39,7 +39,7 @@ public class PlayerMoveement : MonoBehaviour
 
     private void Jump()
     {
-        body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
+        body.linearVelocity = new Vector2(body.linearVelocity.x, (float)(speed * 1.2));
         grounded = false;
     }
 
